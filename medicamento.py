@@ -1,65 +1,94 @@
-remedio = []
-def cadrastro_remedios():
+remedios = []
 
- print("\ncadrastro de remedios")
-     
-nome = input("digite o nome do remedio: ")
-codigo = input("digite o codigo do remedio: ")
-forma_farmaceutica = input("digite a forma farmaceutica: ")
-preço = input("digite o preço")
-    
-novo_remedio = {
+
+def cadastro_remedios():
+    print("CADASTRO DE REMÉDIO")
+
+    nome = input("Digite o nome do remédio: ")
+    codigo = input("Digite o código do remédio: ")
+    forma_farmaceutica = input("Digite a forma farmacêutica: ")
+    preco = input("Digite o preço: ")
+
+    novo_remedio = {
         "codigo": codigo,
         "nome": nome,
         "form_farmaceutica": forma_farmaceutica,
-        "preço": preço,
+        "preco": preco
     }
-remedio.append(novo_remedio)
 
-print("novo remedio cadastrado")
+    remedios.append(novo_remedio)
 
+    print("Remédio cadastrado com sucesso!")
+
+
+def busca_medicamentos():
+    print("BUSCA DE REMÉDIO")
+
+    if len(remedios) == 0:
+        print("Nenhum remédio cadastrado.")
+        return
+
+    termo_busca = input("Digite o código do remédio: ")
+
+    encontrado = False
+
+    for remedio in remedios:
+        if termo_busca.lower() == remedio["codigo"].lower():
+            print("\nRemédio encontrado!")
+            print(f"Nome: {remedio['nome']}")
+            print(f"Código: {remedio['codigo']}")
+            print(f"Forma farmacêutica: {remedio['form_farmaceutica']}")
+            print(f"Preço: R$ {remedio['preco']}")
+
+            encontrado = True
+
+    if encontrado == False:
+        print("Remédio não encontrado.")
 
 
 def lista_medicamentos():
-    print("lista de livros")
-if len == 0:
-    print("nem um remedio no estoque")
-    
-    
-    termo_busca = input("digite o codigo do remedio: ")
-    encontrado = False
-    
-    for remedios in remedio:
-        if termo_busca in remedio ["codigo"]. lower():
-            print("Remedio encontrado")
-            print(f"nome: {nome['nome']}")
-            print(f"codigo: {codigo ['codigo']}")
-            print(f"form_farmaceutica: {forma_farmaceutica ['form_farmaceutica']}")
-            print(f"preço: {preço ['preço']}")
-            
-            
-        
-    
-    
-    
+    print("LISTA DE MEDICAMENTOS")
+
+    if len(remedios) == 0:
+        print("Nenhum remédio cadastrado.")
+        return
+
+    for indice, remedio in enumerate(remedios, start=1):
+        print(f"\nRemédio {indice}")
+        print(f"Nome: {remedio['nome']}")
+        print(f"Código: {remedio['codigo']}")
+        print(f"Forma farmacêutica: {remedio['form_farmaceutica']}")
+        print(f"Preço: R$ {remedio['preco']}")
+
 
 def menu_principal():
-    progrma_rodando = True
-    
-    white progrma_rodando:
-   
-    print("1-cadrasto de remedio")
-   
-    print("2-lista de medicamentos")
-    
-    print("3-busca")
-    
-    opcao = input("escolha uma opção")
-    progrma_rodando = False
-    if opcao == "1":
-     cadrastro_remedios()
+    programa_rodando = True
 
-    elif opcao == "2":
-    
-    elif opcao == "3"
-    
+    while programa_rodando:
+
+        print(" MENU PRINCIPAL")
+        print("1 - Cadastro de remédio")
+        print("2 - Lista de medicamentos")
+        print("3 - Buscar medicamento")
+        print("4 - Sair")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            cadastro_remedios()
+
+        elif opcao == "2":
+            lista_medicamentos()
+
+        elif opcao == "3":
+            busca_medicamentos()
+
+        elif opcao == "4":
+            print("Fim do programa. Valeu!")
+            programa_rodando = False
+
+        else:
+            print("Opção inválida.")
+
+
+menu_principal()
