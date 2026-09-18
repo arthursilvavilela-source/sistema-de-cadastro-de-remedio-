@@ -34,7 +34,7 @@ def busca_medicamentos():
 
     for remedio in remedios:
         if termo_busca.lower() == remedio["codigo"].lower():
-            print("\nRemédio encontrado!")
+            print("Remédio encontrado!")
             print(f"Nome: {remedio['nome']}")
             print(f"Código: {remedio['codigo']}")
             print(f"Forma farmacêutica: {remedio['form_farmaceutica']}")
@@ -54,7 +54,7 @@ def lista_medicamentos():
         return
 
     for indice, remedio in enumerate(remedios, start=1):
-        print(f"\nRemédio {indice}")
+        print(f"Remédio {indice}")
         print(f"Nome: {remedio['nome']}")
         print(f"Código: {remedio['codigo']}")
         print(f"Forma farmacêutica: {remedio['form_farmaceutica']}")
