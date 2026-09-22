@@ -2,7 +2,7 @@ remedios = []
 
 
 def cadastro_remedios():
-    print("CADASTRO DE REMÉDIO")
+    print("===CADASTRO DE REMÉDIO===")
 
     nome = input("Digite o nome do remédio: ")
     codigo = input("Digite o código do remédio: ")
@@ -22,7 +22,7 @@ def cadastro_remedios():
 
 
 def busca_medicamentos():
-    print("BUSCA DE REMÉDIO")
+    print("===BUSCA DE REMÉDIO===")
 
     if len(remedios) == 0:
         print("Nenhum remédio cadastrado.")
@@ -47,7 +47,7 @@ def busca_medicamentos():
 
 
 def lista_medicamentos():
-    print("LISTA DE MEDICAMENTOS")
+    print("===LISTA DE MEDICAMENTOS===")
 
     if len(remedios) == 0:
         print("Nenhum remédio cadastrado.")
@@ -66,7 +66,7 @@ def menu_principal():
 
     while programa_rodando:
 
-        print(" MENU PRINCIPAL")
+        print("===MENU PRINCIPAL===")
         print("1 - Cadastro de remédio")
         print("2 - Lista de medicamentos")
         print("3 - Buscar medicamento")
